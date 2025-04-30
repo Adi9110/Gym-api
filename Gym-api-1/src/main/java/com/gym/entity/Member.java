@@ -41,6 +41,10 @@ public class Member {
     private String password;
     
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role = Role.MEMBER; // Default role
+    
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
@@ -48,5 +52,10 @@ public class Member {
     
     public enum Gender {
         MALE, FEMALE, OTHER
+    }
+    
+    public enum Role {
+        MEMBER,   
+        ADMIN          
     }
 }
