@@ -25,10 +25,18 @@ public class Membership {
 	    @ManyToOne
 	    @JoinColumn(name = "member_id", nullable = false)
 	    private Member member;
+	    
+	    @ManyToOne
+	    @JoinColumn(name = "plan_id", nullable = false)
+	    private Plan plan; 
 	   
 	    private LocalDate startDate;
 	    
 	    private LocalDate endDate;
+	    
+	    private Double height;
+	    
+	    private Double weight;
 	    
 	    private boolean isActive;
 	    

@@ -2,8 +2,8 @@ package com.gym.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.gym.entity.MembershipPlan;
+import com.gym.entity.Plan;
 
-public interface MembershipPlanRepository extends JpaRepository<MembershipPlan, Integer>{
+public interface MembershipPlanRepository extends JpaRepository<Plan, Integer>{
 
 }

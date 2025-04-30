@@ -36,9 +36,9 @@ public class Member {
     
     private LocalDate dateOfBirth;
     
-    private LocalDate joinDate = LocalDate.now();
-    
     private String address;
+     
+    private String password;
     
     @Enumerated(EnumType.STRING)
     private Gender gender;
