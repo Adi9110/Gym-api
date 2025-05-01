@@ -3,6 +3,8 @@ package com.gym.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,22 +42,18 @@ public class Member {
      
     private String password;
     
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Role role = Role.MEMBER; // Default role
+    @Column(nullable=false)
+    private String role = "MEMBER"; // Default role
     
     @Enumerated(EnumType.STRING)
     private Gender gender;
     
+    @JsonIgnore
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Membership> memberships;
     
     public enum Gender {
         MALE, FEMALE, OTHER
     }
-    
-    public enum Role {
-        MEMBER,   
-        ADMIN          
-    }
+   
 }

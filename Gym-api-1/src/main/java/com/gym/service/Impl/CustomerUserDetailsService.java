@@ -18,7 +18,7 @@ import com.gym.repo.UserRepo;
 public class CustomerUserDetailsService implements UserDetailsService{
 
 	@Autowired
-	private MemberRepository userRepository;
+	private MemberRepository memberRepository;
 	
 	
 //	@Autowired
@@ -49,14 +49,13 @@ public class CustomerUserDetailsService implements UserDetailsService{
 	@Transactional
 	public CustomerDetails loadCustomer(String email) {
 		
-		Member user = userRepository.findByEmail(email).orElse(null);
-		if(user == null)
+		Member  member = memberRepository.findByEmail(email).orElse(null);
+		if(member == null)
 		{
 			throw new UsernameNotFoundException("User Not Found");
 		}
-		return new  CustomerDetails(user);
-		
-		
+		return new  CustomerDetails(member);
+			
 	}
 	
 //	@Transactional

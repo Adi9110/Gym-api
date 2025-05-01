@@ -14,16 +14,16 @@ public class CustomerDetails implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Member user;
+	private Member member;
 	
-	public CustomerDetails(Member user) {
-		this.user = user;
+	public CustomerDetails(Member member) {
+		this.member = member;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return List.of(new SimpleGrantedAuthority("ROLE_CUSTOMER"));
+		return List.of(new SimpleGrantedAuthority("ROLE_MEMBER"));
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class CustomerDetails implements UserDetails {
 	
 	public Member getUser()
 	{
-		return user;
+		return member;
 	}
 
 }
