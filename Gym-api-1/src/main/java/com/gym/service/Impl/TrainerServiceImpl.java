@@ -10,14 +10,17 @@ public class TrainerServiceImpl implements TrainerService{
 
 	@Autowired
 	private TrainerRepository trainerRepository;
+	
 	@Override
 	public Trainer createTrainer(Trainer trainer) {
-		// TODO Auto-generated method stub
-		if (trainerRepository.existsByEmail(trainer.getEmail())) {
-//            throw new DuplicateEmailException("Trainer email already exists");
-        }
         return trainerRepository.save(trainer);
     }
+	@Override
+	public Trainer findByEmail(String email) {
+		// TODO Auto-generated method stub
+			return trainerRepository.findByEmail(email).orElse(null);
+		}
 	}
+	
 
 

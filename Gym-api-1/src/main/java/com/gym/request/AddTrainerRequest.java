@@ -2,7 +2,9 @@ package com.gym.request;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
+@Data
 public class AddTrainerRequest {
 
 	@NotBlank(message = "Name is required")
