@@ -58,7 +58,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 //				if (role.equals("trainer")) {
 //					userDetails = userDetailsService.loadTrainerUser(email);
 //				}
-			    if(role.equals("customer"))
+			    if(role.equals("member"))
 				{
 					userDetails = userDetailsService.loadCustomer(email);
 				}

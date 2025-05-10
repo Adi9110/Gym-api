@@ -11,6 +11,7 @@ import com.gym.entity.Member;
 import com.gym.entity.Trainer;
 import com.gym.repo.MemberRepository;
 import com.gym.repo.UserRepo;
+import com.gym.service.TrainerService;
 
 
 
@@ -22,11 +23,7 @@ public class CustomerUserDetailsService implements UserDetailsService{
 	
 	
 //	@Autowired
-//	private ITrainerService restaurantService;
-//	
-//	@Autowired
-//	private IAdminService deliveryPartnerService;
-	
+//	private TrainerService trainerService;
 	
 	@Override 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -41,7 +38,7 @@ public class CustomerUserDetailsService implements UserDetailsService{
 //		{
 //			throw new UsernameNotFoundException("User Not Found");
 //		}
-//		return new TrainerDetails(restaurant);
+//		return new TrainerDetails(trainer);
 //		
 //	}
 	

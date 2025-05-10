@@ -48,8 +48,8 @@ public class SecurityConfig {
 		.authorizeHttpRequests(request->request.
 				requestMatchers("/auth/**").permitAll()
 				.requestMatchers(
-	                   "/api/menu/suggestions/**"
-	                   
+	                   "/api/member/public/**",
+	                   "/api/admin/public/**"
 	                ).permitAll()
 				.requestMatchers(
 	                    "/v3/api-docs/**",
@@ -103,9 +103,9 @@ public class SecurityConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Food Ordering API")
+                        .title("GYM MANAGEMENT SYSTEM")
                         .version("1.0")
-                        .description("API documentation for Food Ordering System"))
+                        .description("API documentation for Gym Management System"))
                 .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
                 .components(new Components().addSecuritySchemes("Bearer Authentication",
                         new SecurityScheme()

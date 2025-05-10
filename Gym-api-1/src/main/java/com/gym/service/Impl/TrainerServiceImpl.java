@@ -1,11 +1,13 @@
 package com.gym.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.gym.entity.Trainer;
 import com.gym.repo.TrainerRepository;
 import com.gym.service.TrainerService;
 
+@Service
 public class TrainerServiceImpl implements TrainerService{
 
 	@Autowired
